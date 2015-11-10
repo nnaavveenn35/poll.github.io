@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<style>
+        @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+body{
+  background:#304653;
+}
+
+.container{
+  border-radius:10px;
+  height:90px;
+  margin:50px auto;
+  overflow: hidden;
+  position: relative;
+  width:390px;
+}
+
+
+.up,.down{
+  border-radius:10px;
+  background:rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.5);
+  float:left;
+  font-size:50px;
+  height:100%;
+  line-height:90px;
+  text-align:center;
+  transition:all .2s linear;
+  width:90px;
+}
+
+.down{margin-left:60px;}
+
+.check{
+  background:#f65330;
+  border-radius:10px;
+  color:#fff;
+  cursor:pointer;
+  font-size:50px;
+  height:100%;
+  line-height:90px;
+  position: absolute;
+  padding-left:20px;
+  right:-320px;
+  transition:all .2s linear;
+  width:100%;
+}
+
+.check:after{
+  content:'Mark Complete';
+  font:35px/90px 'Montserrat';
+  font-style:italic;
+  height:100%;
+  padding-left:20px;
+}
+
+.up:hover{
+  background:#2ecc71;
+  color:#fff;
+  cursor:pointer;
+}
+
+.down:hover{
+  background:#e74c3c;
+  color:#fff;
+  cursor:pointer;
+}
+
+.ok{
+  background: #30c3bb;
+  right: -20px;  
+}
+.scaleDown{
+  transform:scale(0);
+}
+
+
+        </style>
+    </head>
+<body>
+  <h1 style="color:white;">ധനകാര്യ മന്ത്രി  മാണി രാജി വെക്കണോ  ???  </h1>    
+
+<div class="container">
+  <div class="up fontawesome-thumbs-up"></div>
+  <div class="down fontawesome-thumbs-down"></div>
+</div>
+</body>
+        <!-- SCRIPTS -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68672119-1', 'auto');
+  ga('send', 'pageview');
+
+</script>    
+    <script>
+        
+    
+ 
+    var voted = false;
+
+$('.check').click(function(){
+  if(voted)reset();
+});
+
+$('.up').click(function(){
+     alert("up");
+        eventTracker.trackOne('.up', 'Category', 'Action', 'Up');
+
+  $(this).addClass('scaleDown');
+  $('.down').addClass('scaleDown');
+  $('.check').addClass('ok');
+  voted = true;
+    
+});
+
+$('.down').click(function(){
+  alert("down");
+    eventTracker.trackOne('.down', 'Category', 'Action', 'Down');
+  $(this).addClass('scaleDown');
+  $('.up').addClass('scaleDown');
+  $('.check').addClass('ok');
+  voted = true;
+      
+});
+
+function reset(){
+    $('.scaleDown').removeClass('scaleDown');
+    $('.check').removeClass('ok');
+    voted = false;
+   
+}
+
+    
+    </script>
+</html>
